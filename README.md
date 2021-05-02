@@ -1,21 +1,29 @@
 # yii2-portfolio
 # Personal Portfolio 
 
-![Personal-Portfolio](https://socialify.git.ci/DSC-SIST/Personal-Portfolio/image?description=1&font=Raleway&forks=1&issues=1&language=1&logo=https%3A%2F%2Fi.imgur.com%2FZvXu8gj.png&owner=1&pattern=Floating%20Cogs&pulls=1&stargazers=1&theme=Dark)
 
 Have you ever wanted to have a Personal Portfolio Website, but never got a chance to make
 one? Or perhaps you wanted to have a Website that shows your entire hard work over
 the past few years that could help you represent your personal brand?
 
-Presenting Personal Portfolio, the solution to all the times you want to have your personal
-branding game at the top ✨
+
+Portfolio would  
+
+A portfolio is a compilation of work samples and professional documentation that provides proof 
+of your accomplishments or samples of your work.✨✨
+
 
 ## Technology Stack 
+
+LANGUAGES USED :
 
 - HTML
 - CSS
 - Javascript
-- Bootstrap
+- Mysql
+
+LIBRARY AND FRAMEWORK:
+
 - Yii2 Framework
 - Mysql
 
