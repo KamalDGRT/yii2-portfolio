@@ -9,26 +9,186 @@ use yii\helpers\Url;
 
 $this->title = 'Dashboard';
 
-echo "This is Dashboard";
-
-function giveMeCard($cardValue, $iconClass) {
-    $cardContent = '<div class="col-xl-3 col-md-6 mb-4">';
-    $cardContent .= '<div class="card border-left-success shadow h-100 py-2">';
-    $cardContent .= '<div class="card-body">';
-    $cardContent .= '<div class="row no-gutters align-items-center">';
-    $cardContent .= '<div class="col mr-2">';
-    $cardContent .= '<div class="h5 mb-0 font-weight-bold text-gray-800">';
-    $cardContent .= $cardValue;
-    $cardContent .= '</div>';
-    $cardContent .= '</div>';
-    $cardContent .= '<div class="col-auto">';
-    $cardContent .= '<i class="fas ';
-    $cardContent .= $iconClass;
-    $cardContent .= 'fa-2x text-gray-300"></i>';
-    $cardContent .= '</div>';
-    $cardContent .= '</div>';
-    $cardContent .= '</div>';
-    $cardContent .= '</div>';
-    $cardContent .= '</div>';
-return $cardContent;
+function getAnchorContent($cardLabel, $iconClass, $borderLeftClass = 'border-left-danger')
+{
+    $anchorContent = '<div class="card shadow ' . $borderLeftClass . ' py-2"><div class="card-body">';
+    $anchorContent .= '<div class="row align-items-center no-gutters"><div class="col mr-2">';
+    $anchorContent .= '<div class="text-dark font-weight-bold h5 mb-0"><span>';
+    $anchorContent .= $cardLabel;
+    $anchorContent .= '</span></div>';
+    $anchorContent .= '<div class="text-uppercase text-primary font-weight-bold text-xs mb-1"></div>';
+    $anchorContent .= '</div><div class="col-auto"><i class="' . $iconClass . '"></i>';
+    $anchorContent .= '</div></div></div></div>';
+    return $anchorContent;
 }
+
+?>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- About Me -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "About Me",
+                    'far fa-address-card fa-2x text-danger-300'
+                ),
+                ['/aboutme/update/' . Yii::$app->user->identity->id],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Profile Picture",
+                    'fas fa-user-circle fa-2x text-primary-300'
+                ),
+                ['/profilepic'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Education",
+                    'fas fa-university fa-2x text-danger-300'
+                ),
+                ['/education'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Contact Details",
+                    'fas fa-address-book fa-2x text-primary-300'
+                ),
+                ['/contact/update/' . Yii::$app->user->identity->id],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- Skills -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Skills",
+                    'fas fa-certificate fa-2x text-primary-300'
+                ),
+                ['#'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- Achievements -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Achievements",
+                    'fas fa-star fa-2x text-primary-300'
+                ),
+                ['/achievement'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- Company Details -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Company Details",
+                    'fas fa-star fa-2x text-primary-300'
+                ),
+                ['/company/update/' . Yii::$app->user->identity->id],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+
+        <!-- Work Experience -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Work Experience",
+                    'fas fa-briefcase fa-2x text-primary-300'
+                ),
+                ['/experience'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- Volunteer Experience -->
+        <!-- <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Volunteer Experience",
+                    'fas fa-hands-helping fa-2x text-primary-300'
+                ),
+                ['#'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div> -->
+
+
+        <!-- Testimonials -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Testimonials",
+                    'fab fa-slideshare fa-2x text-primary-300'
+                ),
+                ['/testimonial'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- Social Links -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "Social Links",
+                    'fas fa-hashtag fa-2x text-primary-300'
+                ),
+                ['/social'],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+        <!-- SEO Integration -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "SEO Integration",
+                    'fas fa-atlas fa-2x text-primary-300'
+                ),
+                ['/integration/update/' . Yii::$app->user->identity->id],
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
+    </div>
+</div>

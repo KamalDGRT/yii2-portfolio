@@ -9,9 +9,9 @@ use yii\helpers\Url;
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <i class="fas fa-business-time"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">logo&name</div>
+        <div class="sidebar-brand-text mx-3">Portfolio</div>
     </a>
 
     <!-- Divider -->
@@ -32,19 +32,6 @@ use yii\helpers\Url;
         Interface
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-university"></i>
-            <span>Education</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="education.html">Schools & College</a>
-            </div>
-        </div>
-    </li>
-
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -53,15 +40,84 @@ use yii\helpers\Url;
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="aboutme.html">About Me</a>
-                <a class="collapse-item" href="profile.html">Profile picture</a>
-                <a class="collapse-item" href="skills.html">Skills</a>
-                <a class="collapse-item" href="achievements.html">Achievements</a>
-                <a class="collapse-item" href="testimonials.html">Testimonials</a>
-                <a class="collapse-item" href="work.html">Work Experience</a>
-                <a class="collapse-item" href="volunteer.html">Volunteer Experience</a>
-                <a class="collapse-item" href="social.html">Socialmedia handles</a>
-                <a class="collapse-item" href="contact.html">Contact details</a>
+                <?= Html::a(
+                    'About Me',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Profile Picture',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Education',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Contact Details',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Skills',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Achievements',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Company Details',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Work Experience',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'Testimonials',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+
+                <?= Html::a(
+                    'Social Links',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
+                <?= Html::a(
+                    'SEO Integrations',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
+
             </div>
         </div>
     </li>
@@ -81,7 +137,12 @@ use yii\helpers\Url;
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="register.html">change password</a>
+                <?= Html::a(
+                    'Change Password',
+                    '#',
+                    ['class' => 'collapse-item']
+                )
+                ?>
             </div>
         </div>
     </li>
