@@ -31,10 +31,6 @@ $this->title = 'About';
 </section>
 <!-- ================ End banner Area ================= -->
 
-
-
-
-
 <!-- ================ Start Feature Area ================= -->
 <section class="feature-area">
     <div class="container-fluid">
@@ -68,7 +64,6 @@ $this->title = 'About';
 </section>
 <!-- ================ End Feature Area ================= -->
 
-
 <!-- ================- Start About Area ================= -->
 <section class="about-area section-gap">
     <div class="container">
@@ -92,7 +87,6 @@ $this->title = 'About';
     </div>
 </section>
 <!-- ================- End About Area ================= -->
-
 
 <!-- ================ Start Feature Area ================= -->
 <section class="other-feature-area">
