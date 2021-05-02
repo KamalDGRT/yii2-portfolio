@@ -10,8 +10,8 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "{{%aboutme}}".
  *
  * @property int $id
- * @property string|null $firstname
- * @property string|null $lastname
+ * @property string $firstname
+ * @property string $lastname
  * @property string|null $profession
  * @property string|null $aboutme
  * @property string|null $ytlink
@@ -38,6 +38,7 @@ class Aboutme extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['firstname', 'lastname'], 'required'],
             [['aboutme'], 'string'],
             [['created_at', 'created_by', 'updated_at'], 'integer'],
             [['firstname', 'lastname'], 'string', 'max' => 40],
@@ -65,12 +66,12 @@ class Aboutme extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'firstname' => 'Firstname',
-            'lastname' => 'Lastname',
+            'firstname' => 'First Name',
+            'lastname' => 'Last Name',
             'profession' => 'Profession',
-            'aboutme' => 'Aboutme',
-            'ytlink' => 'Ytlink',
-            'website' => 'Website',
+            'aboutme' => 'This is me',
+            'ytlink' => 'YouTube Channel Link',
+            'website' => 'Website Link',
             'created_at' => 'Created At',
             'created_by' => 'Created By',
             'updated_at' => 'Updated At',

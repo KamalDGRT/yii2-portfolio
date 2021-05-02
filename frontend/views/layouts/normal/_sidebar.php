@@ -7,7 +7,7 @@ use yii\helpers\Url;
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo Url::to(['/site/index']) ?>">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-business-time"></i>
         </div>
@@ -19,7 +19,7 @@ use yii\helpers\Url;
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?php echo Url::to(['/site/index']) ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
