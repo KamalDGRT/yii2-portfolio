@@ -108,6 +108,9 @@ class AboutmeController extends Controller
             throw new ForbiddenHttpException("You do not have permission to edit this profile.");
         }
 
+        if($model->created_by === NULL)
+        throw new ForbiddenHttpException("You are not allowed to view someone else's details!!");
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['update', 'id' => $model->id]);
         }
