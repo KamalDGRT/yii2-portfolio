@@ -6,8 +6,6 @@ Have you ever wanted to have a Personal Portfolio Website, but never got a chanc
 one? Or perhaps you wanted to have a Website that shows your entire hard work over
 the past few years that could help you represent your personal brand?
 
-Portfolio would  
-
 A portfolio is a compilation of work samples and professional documentation that provides proof 
 of your accomplishments or samples of your work.✨✨
 
