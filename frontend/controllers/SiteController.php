@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
@@ -78,7 +79,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if (Yii::$app->user->identity !== NULL)
+            return $this->redirect(\yii\helpers\Url::to(['/site/dashboard']));
         return $this->render('index');
+    }
+
+    public function actionDashboard()
+    {
+        $this->layout = false;
+        if (Yii::$app->user->identity !== NULL) {
+            return $this->render('dashboard');
+        }
+        return $this->redirect(\yii\helpers\Url::to(['/site/login']));
     }
 
     /**
@@ -94,7 +106,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(\yii\helpers\Url::to(['/site/dashboard']));
         } else {
             $model->password = '';
 
@@ -158,8 +170,8 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
-            return $this->goHome();
+            // Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+            return $this->redirect(\yii\helpers\Url::to(['/site/login']));
         }
 
         return $this->render('signup', [

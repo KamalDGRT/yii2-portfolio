@@ -28,7 +28,10 @@ PublicAsset::register($this);
 
     <?php $this->beginBody() ?>
     <?php echo $this->render('_header'); ?>
+
+    <?= Alert::widget() ?>
     <?= $content ?>
+
     <?php echo $this->render('_footer'); ?>
     <?php $this->endBody() ?>
 </body>
