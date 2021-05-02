@@ -91,6 +91,31 @@ $this->title = 'Login';
 </style>
 
 
+<!-- ================ start banner Area ================= -->
+<section class="banner-area">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12 banner-right">
+                <h1 class="text-white">
+                    LogIn
+                </h1>
+                <p class="mx-auto text-white  mt-20 mb-40">
+                    Sign in to go to your profile!
+                </p>
+                <div class="link-nav">
+                    <span class="box">
+                        <?= Html::a('Home', ['/site/index']) ?>
+                        <i class="lnr lnr-arrow-right"></i>
+                        <?= Html::a('LogIn', ['/site/login']) ?>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================ End banner Area ================= -->
+
+
 <!-- ================- Start About Area ================= -->
 <section class="about-area section-gap">
 
@@ -100,8 +125,7 @@ $this->title = 'Login';
             <section class="clean-block clean-form dark">
                 <div class="container-fluid">
                     <div class="block-heading">
-                        <h2 class="text-info">Log-In</h2>
-                        <p></p>
+
                     </div>
                     <?php $form = ActiveForm::begin(['class' => 'form-login']); ?>
                     <fieldset>

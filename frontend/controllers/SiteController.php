@@ -36,12 +36,18 @@ class SiteController extends Controller
                 'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => [
+                            'signup',
+                            'login',
+                            'error',
+                            'about',
+                            'contact'
+                        ],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'dashboard'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -86,7 +92,7 @@ class SiteController extends Controller
 
     public function actionDashboard()
     {
-        $this->layout = false;
+        $this->layout = 'normal/main.php';
         if (Yii::$app->user->identity !== NULL) {
             return $this->render('dashboard');
         }
