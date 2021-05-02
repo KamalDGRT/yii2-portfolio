@@ -57,15 +57,14 @@ return [
                 '/achievement/update/<id>' => '/achievement/update',
                 '/experience/update/<id>' => '/experience/update',
                 '/company/update/<id>' => '/company/update',
-                '/product/update/<id>' => '/product/update',
+                '/project/update/<id>' => '/project/update',
                 '/social/update/<id>' => '/social/update',
                 '/integration/update/<id>' => '/integration/update',
                 '/profilepic/update/<id>' => '/profilepic/update',
                 '/profilepic/view/<id>' => '/profilepic/view',
                 '/companylogo/update/<id>' => '/companylogo/update',
                 '/companylogo/view/<id>' => '/companylogo/view',
-                '/user/<username:[a-zA-Z0-9_-]+>'=>'/theme/view',
-
+                // '/user/<username:[a-zA-Z0-9_-]+>'=>'/theme/view',
             ],
         ],
 

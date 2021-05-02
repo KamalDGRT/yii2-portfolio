@@ -115,7 +115,7 @@ function getAnchorContent($cardLabel, $iconClass, $borderLeftClass = 'border-lef
             <?= Html::a(
                 getAnchorContent(
                     "Company Details",
-                    'fas fa-star fa-2x text-primary-300'
+                    'fas fa-building fa-2x text-primary-300'
                 ),
                 ['/company/update/' . Yii::$app->user->identity->id],
                 ['class' => 'a-card']
