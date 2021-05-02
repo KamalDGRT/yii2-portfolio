@@ -1,7 +1,6 @@
 # yii2-portfolio
 # Personal Portfolio 
 
-<a href="https://github.com/KamalDGRT/yii2-portfolio"><img src="https://imgur.com/a/dpFOXXM" width=150px height=300px /></a>
 
 Have you ever wanted to have a Personal Portfolio Website, but never got a chance to make
 one? Or perhaps you wanted to have a Website that shows your entire hard work over
