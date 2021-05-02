@@ -20,6 +20,10 @@ use frontend\models\ContactForm;
  */
 class SiteController extends Controller
 {
+    // Having it here changes for all the actions
+    // inside this Controller.
+    public $layout = 'guest/main.php';
+
     /**
      * {@inheritdoc}
      */
