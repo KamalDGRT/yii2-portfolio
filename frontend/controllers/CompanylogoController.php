@@ -16,6 +16,10 @@ use yii\web\UploadedFile;
  */
 class CompanylogoController extends Controller
 {
+    // Having it here changes for all the actions
+    // inside this Controller.
+    public $layout = 'normal/main.php';
+
     /**
      * {@inheritdoc}
      */

@@ -64,7 +64,8 @@ return [
                 '/profilepic/view/<id>' => '/profilepic/view',
                 '/companylogo/update/<id>' => '/companylogo/update',
                 '/companylogo/view/<id>' => '/companylogo/view',
-                // '/user/<username:[a-zA-Z0-9_-]+>'=>'/theme/view',
+                '/user/<username:[a-zA-Z0-9_-]+>'=>'/theme/view',
+                '/download' => '/theme/download',
             ],
         ],
 

@@ -17,6 +17,10 @@ use yii\filters\AccessControl;
  */
 class ExperienceController extends Controller
 {
+    // Having it here changes for all the actions
+    // inside this Controller.
+    public $layout = 'normal/main.php';
+
     /**
      * {@inheritdoc}
      */
