@@ -26,7 +26,7 @@ $this->title = 'Social Links';
         <?= Html::a(
             'Add Social Link',
             ['social/create'],
-            ['class' => 'button button-fullscreen button-center button-green']
+            ['class' => 'btn btn-lg btn-block btn-success col-sm-4']
         ) ?>
     </p>
 
@@ -34,7 +34,7 @@ $this->title = 'Social Links';
         'dataProvider' => $dataProvider,
         'tableOptions' => [
             'id' => 'example',
-            'class' => 'table-responsive'
+            'class' => 'table table-hover table-bordered',
         ],
         'columns' => [
             [

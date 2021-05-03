@@ -26,7 +26,7 @@ $this->title = 'Achievements';
         <?= Html::a(
             'Add Achievement',
             ['achievement/create'],
-            ['class' => 'button button-fullscreen button-center button-green']
+            ['class' => 'btn btn-lg btn-block btn-success col-sm-4']
         ) ?>
     </p>
 
@@ -34,7 +34,7 @@ $this->title = 'Achievements';
         'dataProvider' => $dataProvider,
         'tableOptions' => [
             'id' => 'example',
-            'class' => 'table-responsive'
+            'class' => 'table table-hover table-bordered',
         ],
         'columns' => [
             [

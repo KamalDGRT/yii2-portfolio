@@ -25,7 +25,7 @@ $this->title = 'Skills';
         <?= Html::a(
             'Add Skills',
             ['skill/create'],
-            ['class' => 'button button-fullscreen button-center button-green']
+            ['class' => 'btn btn-lg btn-block btn-success col-sm-4']
         ) ?>
     </p>
 
@@ -34,7 +34,7 @@ $this->title = 'Skills';
         'dataProvider' => $dataProvider,
         'tableOptions' => [
             'id' => 'example',
-            'class' => 'table-responsive'
+            'class' => 'table table-hover table-bordered',
         ],
         'columns' => [
             [

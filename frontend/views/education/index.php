@@ -26,7 +26,7 @@ $this->title = 'Educations';
         <?= Html::a(
             'Add Education Link',
             ['education/create'],
-            ['class' => 'button button-fullscreen button-center button-green']
+            ['class' => 'btn btn-lg btn-block btn-success col-sm-4']
         ) ?>
     </p>
 
@@ -34,7 +34,7 @@ $this->title = 'Educations';
         'dataProvider' => $dataProvider,
         'tableOptions' => [
             'id' => 'example',
-            'class' => 'table-responsive'
+            'class' => 'table table-hover table-bordered',
         ],
         'columns' => [
             [

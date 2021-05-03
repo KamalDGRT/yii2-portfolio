@@ -26,7 +26,7 @@ $this->title = 'Products';
         <?= Html::a(
             'Add Product',
             ['product/create'],
-            ['class' => 'button button-fullscreen button-center button-green']
+            ['class' => 'btn btn-lg btn-block btn-success col-sm-4']
         ) ?>
     </p>
 
@@ -34,7 +34,7 @@ $this->title = 'Products';
         'dataProvider' => $dataProvider,
         'tableOptions' => [
             'id' => 'example',
-            'class' => 'table-responsive'
+            'class' => 'table table-hover table-bordered',
         ],
         'columns' => [
             [
