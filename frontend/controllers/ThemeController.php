@@ -10,10 +10,9 @@ use common\models\Contact;
 use common\models\Education;
 use common\models\Experience;
 use common\models\Integration;
-use common\models\Payment;
-use common\models\Product;
+use common\models\Project;
 use common\models\Profilepic;
-use common\models\Skills;
+use common\models\Skill;
 use common\models\Social;
 use common\models\Testimonial;
 use Yii;
@@ -98,11 +97,10 @@ class ThemeController extends Controller
             $experienceModel = Experience::findByCreator($userModel->id);
             $integrationModel = Integration::findByCreator($userModel->id);
 
-            $paymentModel = Payment::findByCreator($userModel->id);
-            $productModel = Product::findByCreator($userModel->id);
+            $productModel = Project::findByCreator($userModel->id);
             $profilepicModel = Profilepic::findByCreator($userModel->id);
             
-            $skillsModel = Skills::findByCreator($userModel->id);
+            $skillsModel = Skill::findByCreator($userModel->id);
             $socialModel = Social::findByCreator($userModel->id);
             $testimonialModel = Testimonial::findByCreator($userModel->id);
             $themeModel = Theme::findByCreator($userModel->id);
@@ -121,7 +119,6 @@ class ThemeController extends Controller
                 'educationModel' => $educationModel,
                 'experienceModel' => $experienceModel,
                 'integrationModel' => $integrationModel,
-                'paymentModel' => $paymentModel,
                 'productModel' => $productModel,
                 'profilepicModel' => $profilepicModel,
                 'skillsModel' => $skillsModel,

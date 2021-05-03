@@ -16,7 +16,7 @@ use Yii;
  *
  * @property User $createdBy
  */
-class Skills extends \yii\db\ActiveRecord
+class Skill extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
