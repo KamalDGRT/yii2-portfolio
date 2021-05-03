@@ -126,7 +126,7 @@ class Companylogo extends \yii\db\ActiveRecord
         }
 
         if ($this->image) {
-            $imagePath = Yii::getAlias('@myapp/users/companylogo/' . $this->image_id . '.jpg');
+            $imagePath = Yii::getAlias('@projectroot/users/companylogo/' . $this->image_id . '.jpg');
 
             if (!is_dir(dirname($imagePath))) {
                 FileHelper::createDirectory(dirname($imagePath));
@@ -155,7 +155,7 @@ class Companylogo extends \yii\db\ActiveRecord
     public function afterDelete()
     {
         parent::afterDelete();
-        $imagePath = Yii::getAlias('@myapp/users/companylogo/' . $this->image_id . '.jpg');
+        $imagePath = Yii::getAlias('@projectroot/users/companylogo/' . $this->image_id . '.jpg');
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }

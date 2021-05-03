@@ -3,7 +3,7 @@ return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
-        '@projectroot' => 'http://yii2-portfolio.kamal/'
+        '@projectroot' => dirname(dirname(__DIR__))
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
