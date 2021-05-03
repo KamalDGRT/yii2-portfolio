@@ -1,71 +1,124 @@
 <?php
 
+use common\widgets\Alert;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Company */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap4\ActiveForm */
 ?>
-<div class="clear"></div>
+<div class="contact-clean">
 
-<div class="content">
+    <?php $form = ActiveForm::begin([
+        'options' => [
+            'style' => 'max-width: 962px;'
+        ]
+    ]); ?>
 
-    <div class="row"></div>
-    <?php $form = ActiveForm::begin(['id' => 'company-form']); ?>
+    <h2 class="text-center">Updating Company Details</h2>
+    <p class="text-center"> If you are a student, mention the college details.</p>
 
-    <div class="formFieldWrap homeinout">
-        <fieldset>
-            <?= $form->field($model, 'company_name')->textInput([
-                'autofocus' => true,
-                'class' => 'form-control my-text-input',
-                'placeholder' => 'Enter Company Name',
-            ]) ?>
-        </fieldset>
+    <?= Alert::widget() ?>
+
+    <div style="background:pink;color:blue;">
+        <?php echo $form->errorSummary($model) ?>
     </div>
 
-    <div class="formFieldWrap homeinout">
-        <?= $form->field($model, 'tagline')->textInput([
+    <?= $form->field(
+        $model,
+        'company_name'
+    )->textInput(
+        [
             'autofocus' => true,
             'class' => 'form-control my-text-input',
-            'placeholder' => 'Company Tag Line',
-        ]) ?>
-    </div>
+            'maxlength' => true,
+            'placeholder' => "Enter Company Name"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
 
-    <div class="formFieldWrap homeinout">
-        <?= $form->field($model, 'about')->textarea([
+    <?= $form->field(
+        $model,
+        'tagline'
+    )->textInput(
+        [
+            'autofocus' => true,
+            'class' => 'form-control my-text-input',
+            'maxlength' => true,
+            'placeholder' => "Enter Company Tagline"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
+
+    <?= $form->field($model, 'about')
+        ->textarea([
             'rows' => 10,
-            'cols' => 50,
-            'class' => 'form-control my-text-input heightunset',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'About Company'
-        ]) ?>
-    </div>
+        ])
+        ->label(
+            null,
+            [
+                'class' => 'my-span-label'
+            ]
+        )
+    ?>
 
-    <div class="formFieldWrap homeinout">
-        <?= $form->field($model, 'ytlink')->textInput([
+    <?= $form->field(
+        $model,
+        'ytlink'
+    )->textInput(
+        [
             'autofocus' => true,
             'class' => 'form-control my-text-input',
-            'placeholder' => 'YouTube link',
-        ]) ?>
-    </div>
+            'maxlength' => true,
+            'placeholder' => "YouTube Channel Link"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
 
-    <div class="formFieldWrap homeinout">
-        <?= $form->field($model, 'maplink')->textInput([
+    <?= $form->field(
+        $model,
+        'maplink'
+    )->textInput(
+        [
             'autofocus' => true,
             'class' => 'form-control my-text-input',
-            'placeholder' => 'Enter Google Map Link',
-        ]) ?>
-    </div>
+            'maxlength' => true,
+            'placeholder' => "Enter Google Map Link"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Submit', [
+        <?= Html::submitButton('Update Details', [
             'class' => 'btn btn-lg btn-danger col-sm-12',
+            'style' => 'background:#9E1C3F;',
             'name' => 'aboutme-button'
         ]) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
-    </div>
 
 </div>

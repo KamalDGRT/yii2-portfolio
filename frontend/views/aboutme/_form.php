@@ -6,23 +6,26 @@ use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Aboutme */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap4\ActiveForm */
 
 ?>
 
 <div class="contact-clean">
 
-<?php $form = ActiveForm::begin([
-    'options' => ['style' => 'max-width: 962px;'],
-]); ?>
-<h2 class="text-center">Updating About Me!</h2>
+    <?php $form = ActiveForm::begin([
+        'options' => [
+            'style' => 'max-width: 962px;'
+        ]
+    ]); ?>
 
-<?= Alert::widget() ?>
+    <h2 class="text-center">Updating About Me!</h2>
 
-<div style="background:pink;color:blue;">
-    <?php echo $form->errorSummary($model) ?>
-</div>
-<?= $form->field(
+    <?= Alert::widget() ?>
+
+    <div style="background:pink;color:blue;">
+        <?php echo $form->errorSummary($model) ?>
+    </div>
+    <?= $form->field(
         $model,
         'firstname',
         [
@@ -45,7 +48,7 @@ use yii\bootstrap4\ActiveForm;
     )
     ?>
 
-<?= $form->field(
+    <?= $form->field(
         $model,
         'lastname',
         [
@@ -69,7 +72,7 @@ use yii\bootstrap4\ActiveForm;
     ?>
 
 
-<?= $form->field(
+    <?= $form->field(
         $model,
         'profession'
     )->textInput(
@@ -87,7 +90,7 @@ use yii\bootstrap4\ActiveForm;
     )
     ?>
 
-<?= $form->field($model, 'aboutme')
+    <?= $form->field($model, 'aboutme')
         ->textarea([
             'rows' => 10,
             'class' => 'form-control my-text-input',
@@ -95,7 +98,7 @@ use yii\bootstrap4\ActiveForm;
         ])
         ->label(null, ['class' => 'my-span-label']) ?>
 
-<?= $form->field(
+    <?= $form->field(
         $model,
         'ytlink'
     )->textInput(
@@ -113,7 +116,7 @@ use yii\bootstrap4\ActiveForm;
     )
     ?>
 
-<?= $form->field(
+    <?= $form->field(
         $model,
         'website'
     )->textInput(
@@ -131,9 +134,9 @@ use yii\bootstrap4\ActiveForm;
     )
     ?>
 
-<div class="form-group">
+    <div class="form-group">
         <?= Html::submitButton(
-            'Update Details', 
+            'Update Details',
             [
                 'class' => 'btn btn-lg btn-danger col-sm-12',
                 'style' => 'background:#9E1C3F;',
