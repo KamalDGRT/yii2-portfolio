@@ -16,29 +16,6 @@ $this->title = 'Upload Company logo';
         'model' => $model,
     ]) ?>
 
-    <div class="vjliti"></div>
-
-    <div class="center-text">
-        <!-- <?= Html::a(
-                    'Preview Card',
-                    ['#'],
-                    [
-                        'class' => 'button-vjNichenuBhuru button',
-                        'target' => '_blank',
-                    ],
-                )
-                ?> -->
-
-        <?= Html::a(
-            'Dashboard',
-            ['/site/dashboard'],
-            [
-                'class' => 'button-vjNichenuBhuru button',
-                // 'target' => '_blank',
-            ],
-        )
-        ?>
-
     </div>
 
 </div>

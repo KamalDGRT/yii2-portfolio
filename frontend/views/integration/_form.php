@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'header')->textarea([
         'rows' => 10,
         'cols' => 50,
-        'class' => 'contactField heightunset',
+        'class' => 'form-control my-text-input heightunset',
         'placeholder' => 'Code will be placed before </head>'
     ]) ?>
 </div>
@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'body')->textarea([
         'rows' => 10,
         'cols' => 50,
-        'class' => 'contactField heightunset',
+        'class' => 'form-control my-text-input heightunset',
         'placeholder' => 'Code will be placed in Enquiry Form'
     ]) ?>
 </div>
@@ -36,15 +36,15 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'footer')->textarea([
         'rows' => 10,
         'cols' => 50,
-        'class' => 'contactField heightunset',
+        'class' => 'form-control my-text-input heightunset',
         'placeholder' => 'Code will be placed before </body>'
     ]) ?>
 </div>
 
 
-<div class="formSubmitButtonErrorsWrap contactFormButton">
+<div class="form-group">
     <?= Html::submitButton('Submit', [
-        'class' => 'buttonWrap button button-green contactSubmitButton',
+        'class' => 'btn btn-lg btn-danger col-sm-12',
         'name' => 'aboutme-button'
     ]) ?>
 </div>

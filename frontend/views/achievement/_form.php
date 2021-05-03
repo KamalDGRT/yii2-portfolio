@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 <div class="formFieldWrap homeinout">
     <?= $form->field($model, 'ach_name')->textInput([
         'autofocus' => true,
-        'class' => 'contactField',
+        'class' => 'form-control my-text-input',
         'placeholder' => 'Achievement Name',
     ])->label(false) ?>
 </div>
@@ -27,14 +27,14 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'description')->textarea([
         'rows' => 10,
         'cols' => 50,
-        'class' => 'contactField heightunset',
+        'class' => 'form-control my-text-input heightunset',
         'placeholder' => 'Achievement Description'
     ])->label(false) ?>
 </div>
 
-<div class="formSubmitButtonErrorsWrap contactFormButton">
+<div class="form-group">
     <?= Html::submitButton('Submit', [
-        'class' => 'buttonWrap button button-green contactSubmitButton',
+        'class' => 'btn btn-lg btn-danger col-sm-12',
         'name' => 'aboutme-button'
     ]) ?>
 </div>

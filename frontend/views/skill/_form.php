@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
     <fieldset>
         <?= $form->field($model, 'skillname')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'Skill Name',
         ])->label(false) ?>
     </fieldset>
@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 <div class="formFieldWrap">
     <?= $form->field($model, 'skillvalue')->textInput([
         'autofocus' => true,
-        'class' => 'contactField',
+        'class' => 'form-control my-text-input',
         'type' => 'number',
         'min' => '0',
         'max' => '100',
@@ -33,9 +33,9 @@ use yii\widgets\ActiveForm;
     ])->label(false) ?>
 </div>
 
-<div class="formSubmitButtonErrorsWrap contactFormButton">
+<div class="form-group">
     <?= Html::submitButton('Submit', [
-        'class' => 'buttonWrap button button-green contactSubmitButton',
+        'class' => 'btn btn-lg btn-danger col-sm-12',
         'name' => 'aboutme-button'
     ]) ?>
 </div>

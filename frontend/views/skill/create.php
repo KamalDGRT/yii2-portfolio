@@ -3,20 +3,17 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Social */
+/* @var $model common\models\Skill */
 
-$this->title = 'Add Products';
+$this->title = 'Create Skills';
 ?>
-<div class="experience-create">
+<div class="skills-create">
     <div class="content">
-        <h3 class="center-text">Add Social Link</h3>
+        <h1 class="center-text">Add Skill</h1>
 
         <?= $this->render('_form', [
             'model' => $model,
         ]) ?>
-
-
-
 
     </div>
 </div>

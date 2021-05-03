@@ -35,9 +35,9 @@ if ($model->has_image) {
 // render the submit button
 ?>
 
-<div class="formSubmitButtonErrorsWrap contactFormButton">
+<div class="form-group">
     <?= Html::submitButton($model->isNewRecord ? 'Upload' : 'Update', [
-        'class' => 'buttonWrap button button-green contactSubmitButton',
+        'class' => 'btn btn-lg btn-danger col-sm-12',
         'name' => 'profilepic-button'
     ]) ?>
 </div>
@@ -51,7 +51,7 @@ if (!$model->isNewRecord) { ?>
     <?= Html::submitButton(
         'Delete',
         [
-            'class' => 'buttonWrap button button-green contactSubmitButton',
+            'class' => 'btn btn-lg btn-danger col-sm-12',
         ],
     )
     ?>

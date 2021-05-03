@@ -91,7 +91,7 @@ function getAnchorContent($cardLabel, $iconClass, $borderLeftClass = 'border-lef
                     "Skills",
                     'fas fa-certificate fa-2x text-primary-300'
                 ),
-                ['#'],
+                ['/skill'],
                 ['class' => 'a-card']
             )
             ?>

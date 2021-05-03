@@ -55,28 +55,7 @@ $this->title = 'Social Links';
         ],
     ]); ?>
 
-    <div class="vjliti"></div>
 
-    <div class="center-text">
-        <!-- <?= Html::a(
-                    'Preview Card',
-                    ['#'],
-                    [
-                        'class' => 'button-vjNichenuBhuru button',
-                        'target' => '_blank',
-                    ],
-                )
-                ?> -->
-
-        <?= Html::a(
-            'Dashboard',
-            ['/site/dashboard'],
-            [
-                'class' => 'button-vjNichenuBhuru button',
-                // 'target' => '_blank',
-            ],
-        )
-        ?>
 
     </div>
 

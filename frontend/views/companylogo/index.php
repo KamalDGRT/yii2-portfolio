@@ -32,7 +32,7 @@ $this->title = 'Profile Picture';
                 <?= Html::a(
                     'Upload a Company Logo',
                     ['/companylogo/create/'],
-                    ['class' => 'buttonWrap button button-green contactSubmitButton'],
+                    ['class' => 'btn btn-lg btn-danger col-sm-12'],
                 )
                 ?>
             <?php } else if ($hasCompanyLogo == 1) {  ?>
@@ -40,7 +40,7 @@ $this->title = 'Profile Picture';
                 <?= Html::submitButton(
                     'Remove Current Company Logo & Add a New One',
                     [
-                        'class' => 'buttonWrap button button-green contactSubmitButton',
+                        'class' => 'btn btn-lg btn-danger col-sm-12',
                     ],
                 )
                 ?>
@@ -48,36 +48,12 @@ $this->title = 'Profile Picture';
                 <?= Html::a(
                     'View Company Logo',
                     ['/companylogo/view/' . $imageDetail->id],
-                    ['class' => 'buttonWrap button button-green contactSubmitButton'],
+                    ['class' => 'btn btn-lg btn-danger col-sm-12'],
                 )
                 ?>
             <?php } ?>
         </div>
 
-        <div class="vjliti"></div>
-
-        <div class="center-text">
-            <!-- <?= Html::a(
-                        'Preview Card',
-                        ['#'],
-                        [
-                            'class' => 'button-vjNichenuBhuru button',
-                            'target' => '_blank',
-                        ],
-                    )
-                    ?> -->
-
-            <?= Html::a(
-                'Dashboard',
-                ['/site/dashboard'],
-                [
-                    'class' => 'button-vjNichenuBhuru button',
-                    // 'target' => '_blank',
-                ],
-            )
-            ?>
-
-        </div>
     </div>
 
 </div>

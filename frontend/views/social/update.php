@@ -19,35 +19,13 @@ $this->title = 'Edit Social Link';
         <?= Html::submitButton(
             'Delete',
             [
-                'class' => 'buttonWrap button button-green contactSubmitButton',
+                'class' => 'btn btn-lg btn-danger col-sm-12',
             ],
         )
         ?>
         <?= Html::endForm() ?>
 
-        <div class="vjliti"></div>
 
-        <div class="center-text">
-            <!-- <?= Html::a(
-                        'Preview Card',
-                        ['#'],
-                        [
-                            'class' => 'button-vjNichenuBhuru button',
-                            'target' => '_blank',
-                        ],
-                    )
-                    ?> -->
-
-            <?= Html::a(
-                'Dashboard',
-                ['/site/dashboard'],
-                [
-                    'class' => 'button-vjNichenuBhuru button',
-                    // 'target' => '_blank',
-                ],
-            )
-            ?>
-        </div>
 
     </div>
 </div>

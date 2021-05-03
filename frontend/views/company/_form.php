@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         <fieldset>
             <?= $form->field($model, 'company_name')->textInput([
                 'autofocus' => true,
-                'class' => 'contactField',
+                'class' => 'form-control my-text-input',
                 'placeholder' => 'Enter Company Name',
             ]) ?>
         </fieldset>
@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <div class="formFieldWrap homeinout">
         <?= $form->field($model, 'tagline')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'Company Tag Line',
         ]) ?>
     </div>
@@ -36,7 +36,7 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'about')->textarea([
             'rows' => 10,
             'cols' => 50,
-            'class' => 'contactField heightunset',
+            'class' => 'form-control my-text-input heightunset',
             'placeholder' => 'About Company'
         ]) ?>
     </div>
@@ -44,7 +44,7 @@ use yii\widgets\ActiveForm;
     <div class="formFieldWrap homeinout">
         <?= $form->field($model, 'ytlink')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'YouTube link',
         ]) ?>
     </div>
@@ -52,42 +52,19 @@ use yii\widgets\ActiveForm;
     <div class="formFieldWrap homeinout">
         <?= $form->field($model, 'maplink')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'Enter Google Map Link',
         ]) ?>
     </div>
 
-    <div class="formSubmitButtonErrorsWrap contactFormButton">
+    <div class="form-group">
         <?= Html::submitButton('Submit', [
-            'class' => 'buttonWrap button button-green contactSubmitButton',
+            'class' => 'btn btn-lg btn-danger col-sm-12',
             'name' => 'aboutme-button'
         ]) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
-    <div class="vjliti"></div>
-
-    <div class="center-text">
-        <!-- <?= Html::a(
-                    'Preview Card',
-                    ['#'],
-                    [
-                        'class' => 'button-vjNichenuBhuru button',
-                        'target' => '_blank',
-                    ],
-                )
-                ?> -->
-
-        <?= Html::a(
-            'Dashboard',
-            ['/site/dashboard'],
-            [
-                'class' => 'button-vjNichenuBhuru button',
-                // 'target' => '_blank',
-            ],
-        )
-        ?>
 
     </div>
 

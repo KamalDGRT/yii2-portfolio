@@ -32,7 +32,7 @@ $this->title = 'Profile Picture';
                 <?= Html::a(
                     'Upload a Profile Photo',
                     ['/profilepic/create/'],
-                    ['class' => 'buttonWrap button button-green contactSubmitButton'],
+                    ['class' => 'btn btn-lg btn-danger col-sm-12'],
                 )
                 ?>
             <?php } else if ($hasProfilePic == 1) {  ?>
@@ -40,7 +40,7 @@ $this->title = 'Profile Picture';
                 <?= Html::submitButton(
                     'Remove Current Profile Photo & Add a New One',
                     [
-                        'class' => 'buttonWrap button button-green contactSubmitButton',
+                        'class' => 'btn btn-lg btn-danger col-sm-12',
                     ],
                 )
                 ?>
@@ -48,36 +48,12 @@ $this->title = 'Profile Picture';
                 <?= Html::a(
                     'View Profile Photo',
                     ['/profilepic/view/' . $imageDetail->id],
-                    ['class' => 'buttonWrap button button-green contactSubmitButton'],
+                    ['class' => 'btn btn-lg btn-danger col-sm-12'],
                 )
                 ?>
             <?php } ?>
         </div>
 
-        <div class="vjliti"></div>
-
-        <div class="center-text">
-            <!-- <?= Html::a(
-                        'Preview Card',
-                        ['#'],
-                        [
-                            'class' => 'button-vjNichenuBhuru button',
-                            'target' => '_blank',
-                        ],
-                    )
-                    ?> -->
-
-            <?= Html::a(
-                'Dashboard',
-                ['/site/dashboard'],
-                [
-                    'class' => 'button-vjNichenuBhuru button',
-                    // 'target' => '_blank',
-                ],
-            )
-            ?>
-
-        </div>
     </div>
 
 </div>

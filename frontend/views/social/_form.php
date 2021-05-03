@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
         $model->getSocialLinkTypes(),
         [
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
         ]
     )->label(false) ?>
 </div>
@@ -28,15 +28,15 @@ use yii\widgets\ActiveForm;
 <div class="formFieldWrap homeinout">
     <?= $form->field($model, 'soc_url')->textInput([
         'autofocus' => true,
-        'class' => 'contactField',
+        'class' => 'form-control my-text-input',
         'placeholder' => 'URL with http://',
     ])->label(false) ?>
 </div>
 
 
-<div class="formSubmitButtonErrorsWrap contactFormButton">
+<div class="form-group">
     <?= Html::submitButton('Submit', [
-        'class' => 'buttonWrap button button-green contactSubmitButton',
+        'class' => 'btn btn-lg btn-danger col-sm-12',
         'name' => 'aboutme-button'
     ]) ?>
 </div>

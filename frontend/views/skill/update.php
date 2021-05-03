@@ -3,21 +3,23 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Product */
+/* @var $model common\models\Skills */
 
-$this->title = 'Edit Product';
+$this->title = 'Updating Skills: ';
+
 ?>
-<div class="product-update">
+<div class="skills-update">
 
-    <h3 class="center-text">Edit Product</h3>
+    <h3 class="center-text">Edit Skill</h3>
 
     <div class="content">
         <?= $this->render('_form', [
             'model' => $model,
         ]) ?>
-        <?= Html::beginForm(['/product/delete', 'id' => $model->id], 'post'); ?>
+
+        <?= Html::beginForm(['/skill/delete', 'id' => $model->id], 'post'); ?>
         <?= Html::submitButton(
-            'Delete',
+            'Delete Skill',
             [
                 'class' => 'btn btn-lg btn-danger col-sm-12',
             ],

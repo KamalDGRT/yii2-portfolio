@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         <fieldset>
             <?= $form->field($model, 'phone')->textInput([
                 'autofocus' => true,
-                'class' => 'contactField',
+                'class' => 'form-control my-text-input',
                 'placeholder' => 'e.g. +916060606060',
             ]) ?>
         </fieldset>
@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <div class="formFieldWrap">
         <?= $form->field($model, 'email')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'Valid Work Email',
         ]) ?>
     </div>
@@ -35,7 +35,7 @@ use yii\widgets\ActiveForm;
     <div class="formFieldWrap">
         <?= $form->field($model, 'whatsapp')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'e.g. 7060606060',
         ]) ?>
     </div>
@@ -44,7 +44,7 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'address')->textarea([
             'rows' => 10,
             'cols' => 50,
-            'class' => 'contactField heightunset',
+            'class' => 'form-control my-text-input heightunset',
             'placeholder' => 'Enter Address'
         ]) ?>
     </div>
@@ -52,7 +52,7 @@ use yii\widgets\ActiveForm;
     <div class="formFieldWrap">
         <?= $form->field($model, 'skype')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'Enter Skype id',
         ]) ?>
     </div>
@@ -60,42 +60,19 @@ use yii\widgets\ActiveForm;
     <div class="formFieldWrap">
         <?= $form->field($model, 'fb')->textInput([
             'autofocus' => true,
-            'class' => 'contactField',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'e.g https://m.me/pageid',
         ]) ?>
     </div>
 
-    <div class="formSubmitButtonErrorsWrap contactFormButton">
+    <div class="form-group">
         <?= Html::submitButton('Submit', [
-            'class' => 'buttonWrap button button-green contactSubmitButton',
+            'class' => 'btn btn-lg btn-danger col-sm-12',
             'name' => 'aboutme-button'
         ]) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
-    <div class="vjliti"></div>
-
-    <div class="center-text">
-        <!-- <?= Html::a(
-                    'Preview Card',
-                    ['#'],
-                    [
-                        'class' => 'button-vjNichenuBhuru button',
-                        'target' => '_blank',
-                    ],
-                )
-                ?> -->
-
-        <?= Html::a(
-            'Dashboard',
-            ['/site/dashboard'],
-            [
-                'class' => 'button-vjNichenuBhuru button',
-                // 'target' => '_blank',
-            ],
-        )
-        ?>
 
     </div>
 
