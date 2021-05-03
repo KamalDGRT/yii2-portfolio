@@ -6,16 +6,17 @@ use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Theme;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
 /**
  * Site controller
  */
@@ -90,10 +91,26 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function checkThemeSelected() {
+        $theme = new ActiveDataProvider([
+            'query' => Theme::find()->where(['created_by' => Yii::$app->user->identity->id]),
+        ]);
+        $themeCount = $theme->getTotalCount();
+
+        if($themeCount > 0) // if satisfied, default theme has been choosen
+            return TRUE;
+        return FALSE;
+    }
+
     public function actionDashboard()
     {
         $this->layout = 'normal/main.php';
         if (Yii::$app->user->identity !== NULL) {
+            if(!$this->checkThemeSelected()) {
+                $theme = new Theme();
+                $theme->theme_chosen = 1;
+                $theme->save();
+            }
             return $this->render('dashboard');
         }
         return $this->redirect(\yii\helpers\Url::to(['/site/login']));
