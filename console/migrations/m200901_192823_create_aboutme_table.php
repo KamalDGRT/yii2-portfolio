@@ -17,8 +17,8 @@ class m200901_192823_create_aboutme_table extends Migration
     {
         $this->createTable('{{%aboutme}}', [
             'id' => $this->primaryKey(),
-            'firstname' => $this->string(40),
-            'lastname' => $this->string(40),
+            'firstname' => $this->string(40)->notNull(),
+            'lastname' => $this->string(40)->notNull(),
             'profession' => $this->string(60),
             'aboutme' => $this->text(),
             'ytlink' => $this->string(100),
