@@ -57,7 +57,7 @@ class Achievement extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'ach_name' => 'Ach Name',
+            'ach_name' => 'Achievement Name',
             'description' => 'Description',
             'created_at' => 'Created At',
             'created_by' => 'Created By',

@@ -33,6 +33,20 @@ function getAnchorContent($cardLabel, $iconClass, $borderLeftClass = 'border-lef
     <!-- Content Row -->
     <div class="row">
 
+    <!-- About Me -->
+    <div class="col-xl-3 col-md-6 mb-4">
+            <?= Html::a(
+                getAnchorContent(
+                    "View Portfolio",
+                    'far fa-address-card fa-2x text-danger-300',
+                    'border-left-info'
+                ),
+                Url::to(['/theme/view', 'username' => Yii::$app->user->identity->username]),
+                ['class' => 'a-card']
+            )
+            ?>
+        </div>
+
         <!-- About Me -->
         <div class="col-xl-3 col-md-6 mb-4">
             <?= Html::a(

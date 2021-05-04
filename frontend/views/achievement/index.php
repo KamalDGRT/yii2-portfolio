@@ -1,5 +1,6 @@
 <?php
 
+use frontend\assets\TableAsset;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -9,8 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Achievements';
 ?>
 <div class="content">
-
-    <h3 class="center-text">Achievement</h3>
 
     <?php $k = 0;
     if ($k) { ?>
@@ -23,43 +22,61 @@ $this->title = 'Achievements';
         </div>
     <?php } ?>
     <p>
-        <?= Html::a(
-            'Add Achievement',
-            ['achievement/create'],
-            ['class' => 'btn btn-lg btn-block btn-success col-sm-4']
-        ) ?>
+
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'tableOptions' => [
-            'id' => 'example',
-            'class' => 'table table-hover table-bordered',
-        ],
-        'columns' => [
-            [
-                'header' => '#',
-                'class' => 'yii\grid\SerialColumn'
-            ],
-            [
-                'attribute' => 'ach_name',
-                'header' => 'Name',
-                // 'headerOptions' => ['width' => '80'],
-            ],
-            [
-                'attribute' => 'description',
-                'header' => 'Description',
-                // 'headerOptions' => ['width' => '80'],
-            ],
-            [
-                'header' => 'Edit',
-                'content' => function ($model) {
-                    return $this->render('_edit', ['model' => $model]);
-                }
-            ],
-        ],
-    ]); ?>
+    <div class="container-fluid">
+        <div class="card shadow text-center">
+            <div class="card-header py-3">
+                <h3 class="text-primary m-0 font-weight-bold">Achievements</h3>
+            </div>
+            <div class="card-body">
 
+                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                    <?= GridView::widget([
+                        'dataProvider' => $dataProvider,
+                        'tableOptions' => [
+                            'id' => 'example',
+                            'class' => 'table my-0 black',
+                        ],
+                        'columns' => [
+                            [
+                                'header' => '#',
+                                'class' => 'yii\grid\SerialColumn'
+                            ],
+                            [
+                                'attribute' => 'ach_name',
+                                'header' => 'Name',
+                                // 'headerOptions' => ['width' => '80'],
+                            ],
+                            [
+                                'attribute' => 'description',
+                                'header' => 'Description',
+                                // 'headerOptions' => ['width' => '80'],
+                            ],
+                            [
+                                'header' => 'Options',
+                                'content' => function ($model) {
+                                    return $this->render('_edit', ['model' => $model]);
+                                }
+                            ],
+                        ],
+                    ]); ?>
+                </div>
+
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+
+                <p class="card-text black">To add achievements,</p>
+                <?= Html::a(
+                    'Click Here!',
+                    ['/achievement/create'],
+                    [
+                        'class' => 'btn btn-primary',
+                    ]
+                )
+                ?>
+            </div>
+        </div>
     </div>
-
 </div>

@@ -105,13 +105,13 @@ class ProfilepicController extends Controller
         echo $model->avatar;
 
         $oldAvatar = $model->avatar;
-        $oldAvatarPath = Yii::getAlias('@myapp/users/images/' . $oldAvatar . '.jpg');
+        $oldAvatarPath = Yii::getAlias('@projectroot/users/images/' . $oldAvatar . '.jpg');
 
         $model->image = UploadedFile::getInstanceByName('image');
 
         if ($model->image !== NULL) {
             $this->findModel($id)->delete();
-            $oldAvatarPath = Yii::getAlias('@myapp/users/images/' . $oldAvatar . '.jpg');
+            $oldAvatarPath = Yii::getAlias('@projectroot/users/images/' . $oldAvatar . '.jpg');
             if (file_exists($oldAvatarPath)) {
                 unlink($oldAvatar);
             }

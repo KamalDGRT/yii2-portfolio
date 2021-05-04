@@ -127,7 +127,7 @@ class Profilepic extends \yii\db\ActiveRecord
         }
 
         if ($this->image) {
-            $imagePath = Yii::getAlias('@myapp/users/images/' . $this->avatar . '.jpg');
+            $imagePath = Yii::getAlias('@projectroot/users/images/' . $this->avatar . '.jpg');
 
             if (!is_dir(dirname($imagePath))) {
                 FileHelper::createDirectory(dirname($imagePath));
@@ -157,7 +157,7 @@ class Profilepic extends \yii\db\ActiveRecord
     public function afterDelete()
     {
         parent::afterDelete();
-        $imagePath = Yii::getAlias('@myapp/users/images/' . $this->avatar . '.jpg');
+        $imagePath = Yii::getAlias('@projectroot/users/images/' . $this->avatar . '.jpg');
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }

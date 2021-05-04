@@ -6,9 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Company */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Companies', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = $model->company_name;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="company-view">
@@ -35,10 +33,35 @@ $this->params['breadcrumbs'][] = $this->title;
             'about:ntext',
             'ytlink',
             'maplink',
-            'created_at',
-            'created_by',
-            'updated_at',
-        ],
+            [
+                'label' => 'Created At',
+                'value' => function ($model) {
+                    $item_date = $model->created_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ],
+            [
+                'label' => 'Created By',
+                'value' => function($model) {
+                    return $model->createdBy->username;
+                }
+            ],
+            [
+                'label' => 'Updated At',
+                'value' => function ($model) {
+                    $item_date = $model->updated_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ],
+        ]
     ]) ?>
 
 </div>

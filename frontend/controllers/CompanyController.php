@@ -53,6 +53,7 @@ class CompanyController extends Controller
      */
     public function actionIndex()
     {
+        throw new ForbiddenHttpException("You do not have permission to view this page!");
         $dataProvider = new ActiveDataProvider([
             'query' => Company::find(),
         ]);
@@ -107,6 +108,9 @@ class CompanyController extends Controller
         if ($model->created_by !== NULL && $model->created_by !== Yii::$app->user->id) {
             throw new ForbiddenHttpException("You do not have permission to edit this profile.");
         }
+
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to view someone else's details!!");
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['update', 'id' => $model->id]);

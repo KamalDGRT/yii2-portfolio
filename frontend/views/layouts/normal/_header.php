@@ -24,6 +24,7 @@ use yii\helpers\Html;
                             <?php
                             echo Yii::$app->user->identity->username; ?>
                         </span>
+                        <!-- <img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"> -->
                     </a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
                         <a class="dropdown-item" role="presentation" href="#">

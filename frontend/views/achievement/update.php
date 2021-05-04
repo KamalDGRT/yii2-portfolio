@@ -15,15 +15,7 @@ $this->title = 'Updating Achievement';
         <?= $this->render('_form', [
             'model' => $model,
         ]) ?>
-        <?= Html::beginForm(['/achievement/delete', 'id' => $model->id], 'post'); ?>
-        <?= Html::submitButton(
-            'Delete',
-            [
-                'class' => 'btn btn-lg btn-danger col-sm-12',
-            ],
-        )
-        ?>
-        <?= Html::endForm() ?>
+        <br>
 
     </div>
 </div>
