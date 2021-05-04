@@ -5,7 +5,7 @@ use yii\helpers\Html;
 use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Education */
+/* @var $model common\models\Achievement */
 /* @var $form yii\bootstrap4\ActiveForm */
 ?>
 

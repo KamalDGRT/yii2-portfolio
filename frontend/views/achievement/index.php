@@ -1,6 +1,5 @@
 <?php
 
-use frontend\assets\TableAsset;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -21,9 +20,6 @@ $this->title = 'Achievements';
             <i class="fa fa-check-square"></i> Achievement has been deleted successfully.
         </div>
     <?php } ?>
-    <p>
-
-    </p>
 
     <div class="container-fluid">
         <div class="card shadow text-center">

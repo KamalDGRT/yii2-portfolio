@@ -3,6 +3,28 @@
 use yii\helpers\Html;
 ?>
 
-<?= Html::a('Edit', ['/education/update', 'id' => $model->id], [
-    'class' => 'button button-magenta bottom0',
-]) ?>
+<?= Html::a(
+    '<i class="fa fa-eye"></i>',
+    [
+        '/education/view',
+        'id' => $model->id
+    ],
+    [
+        'class' => 'btn-xs tooltips',
+        'tooltip-placement' => 'top',
+        'tooltip' => 'View'
+    ]
+) ?>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<?= Html::a(
+    '<i class="fa fa-edit"></i>',
+    [
+        '/education/update',
+        'id' => $model->id
+    ],
+    [
+        'class' => 'btn-xs tooltips',
+        'tooltip-placement' => 'top',
+        'tooltip' => 'Edit'
+    ]
+) ?>
