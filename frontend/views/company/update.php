@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Company */
 
-$this->title = 'Updating Company';
+$this->title = 'Updating Company Details';
 
 ?>
 <div class="company-update">

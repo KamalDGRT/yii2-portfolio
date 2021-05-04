@@ -112,11 +112,14 @@ use yii\bootstrap4\ActiveForm;
     ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Update Details', [
-            'class' => 'btn btn-lg btn-danger col-sm-12',
-            'style' => 'background:#9E1C3F;',
-            'name' => 'aboutme-button'
-        ]) ?>
+        <?= Html::submitButton(
+            'Update Company Details',
+            [
+                'class' => 'btn btn-lg btn-danger col-sm-12',
+                'style' => 'background:#9E1C3F;',
+                'name' => 'aboutme-button'
+            ]
+        ) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

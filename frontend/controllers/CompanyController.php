@@ -53,6 +53,7 @@ class CompanyController extends Controller
      */
     public function actionIndex()
     {
+        throw new ForbiddenHttpException("You do not have permission to view this page!");
         $dataProvider = new ActiveDataProvider([
             'query' => Company::find(),
         ]);

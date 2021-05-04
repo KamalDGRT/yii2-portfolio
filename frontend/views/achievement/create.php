@@ -9,7 +9,7 @@ $this->title = 'Adding Achievement';
 ?>
 <div class="achievement-create">
     <div class="content">
-        <h3 class="center-text">Add Achievement</h3>
+        <h3 class="text-center text-dark">Add Achievement</h3>
 
         <?= $this->render('_form', [
             'model' => $model,
