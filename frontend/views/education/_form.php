@@ -92,7 +92,7 @@ use yii\bootstrap4\ActiveForm;
             <div class="col-sm-5">
                 <?= Html::beginForm(
                     [
-                        '/Education History/delete',
+                        '/education/delete',
                         'id' => $model->id
                     ],
                     'post'

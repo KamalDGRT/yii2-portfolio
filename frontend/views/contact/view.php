@@ -7,8 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Contact */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="contact-view">
@@ -36,10 +35,29 @@ $this->params['breadcrumbs'][] = $this->title;
             'address',
             'skype',
             'fb',
-            'created_by',
-            'created_at',
-            'updated_at',
-        ],
+            [
+                'label' => 'Created At',
+                'value' => function ($model) {
+                    $item_date = $model->created_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ],
+            [
+                'label' => 'Updated At',
+                'value' => function ($model) {
+                    $item_date = $model->updated_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ]
+        ]
     ]) ?>
 
 </div>

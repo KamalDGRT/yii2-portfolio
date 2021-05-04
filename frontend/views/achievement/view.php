@@ -81,8 +81,8 @@ $this->title = 'Achievement | ' . $model->ach_name;
                     $would_be = $dt->format('g:ia T \o\n d-m-Y');
                     return $would_be;
                 }
-            ],
-        ],
+            ]
+        ]
     ]) ?>
 
 </div>

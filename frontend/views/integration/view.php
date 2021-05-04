@@ -7,8 +7,6 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Integration */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Integrations', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="integration-view">
@@ -33,9 +31,28 @@ $this->params['breadcrumbs'][] = $this->title;
             'header',
             'body',
             'footer',
-            'created_at',
-            'created_by',
-            'updated_at',
+            [
+                'label' => 'Created At',
+                'value' => function ($model) {
+                    $item_date = $model->created_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ],
+            [
+                'label' => 'Updated At',
+                'value' => function ($model) {
+                    $item_date = $model->updated_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ]
         ],
     ]) ?>
 

@@ -114,7 +114,7 @@ class ExperienceController extends Controller
         }
 
         if ($model->created_by === NULL)
-        throw new ForbiddenHttpException("You are not allowed to access this page!!");
+            throw new ForbiddenHttpException("You are not allowed to access this page!!");
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);

@@ -47,7 +47,7 @@ $this->title = 'Education';
                             ],
                             [
                                 'attribute' => 'duration',
-                                'header' => 'Name',
+                                'header' => 'Duration',
                                 // 'headerOptions' => ['width' => '80'],
                             ],
                             [
@@ -60,8 +60,8 @@ $this->title = 'Education';
                                 'content' => function ($model) {
                                     return $this->render('_edit', ['model' => $model]);
                                 }
-                            ],
-                        ],
+                            ]
+                        ]
                     ]); ?>
                 </div>
 

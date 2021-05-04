@@ -12,7 +12,7 @@ $this->title = 'Create Profilepic';
     <h3 class="center-text">Hi, Upload your profile picture!</h3>
 
     <?= $this->render('_form', [
-        'model' => $model,
+        'model' => $model
     ]) ?>
 
     </div>
