@@ -9,8 +9,6 @@ $this->title = 'Updating Contact Details';
 ?>
 <div class="contact-update">
 
-    <h3 class="center-text">Contact Details Update</h3>
-
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
