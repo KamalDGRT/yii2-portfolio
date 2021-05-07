@@ -1,79 +1,141 @@
 <?php
 
+use common\widgets\Alert;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Aboutme */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap4\ActiveForm */
+
 ?>
-<div class="clear"></div>
 
-<div class="content">
+<div class="contact-clean">
 
-    <div class="row"></div>
-    <?php $form = ActiveForm::begin(['id' => 'aboutme-form']); ?>
+    <?php $form = ActiveForm::begin([
+        'options' => [
+            'style' => 'max-width: 962px;'
+        ]
+    ]); ?>
 
-    <div class="formFieldWrap">
-        <fieldset>
-            <?= $form->field($model, 'phone')->textInput([
-                'autofocus' => true,
-                'class' => 'form-control my-text-input',
-                'placeholder' => 'e.g. +916060606060',
-            ]) ?>
-        </fieldset>
+    <h2 class="text-center">Updating Contact Details</h2>
+
+    <?= Alert::widget() ?>
+
+    <div style="background:pink;color:blue;">
+        <?php echo $form->errorSummary($model) ?>
     </div>
 
-    <div class="formFieldWrap">
-        <?= $form->field($model, 'email')->textInput([
-            'autofocus' => true,
+    <?= $form->field(
+        $model,
+        'phone'
+    )->textInput(
+        [
             'class' => 'form-control my-text-input',
-            'placeholder' => 'Valid Work Email',
-        ]) ?>
-    </div>
+            'maxlength' => true,
+            // 'onkeypress' => 'return allowOnlyAlphabets(event)',
+            'placeholder' => "e.g. +916060606060"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
 
-    <div class="formFieldWrap">
-        <?= $form->field($model, 'whatsapp')->textInput([
-            'autofocus' => true,
+    <?= $form->field(
+        $model,
+        'email'
+    )->textInput(
+        [
             'class' => 'form-control my-text-input',
-            'placeholder' => 'e.g. 7060606060',
-        ]) ?>
-    </div>
+            'maxlength' => true,
+            'placeholder' => "Valid Work Email"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
 
-    <div class="formFieldWrap">
-        <?= $form->field($model, 'address')->textarea([
+    <?= $form->field(
+        $model,
+        'whatsapp'
+    )->textInput(
+        [
+            'class' => 'form-control my-text-input',
+            'maxlength' => true,
+            'placeholder' => "e.g. +917070707070"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
+
+    <?= $form->field($model, 'address')
+        ->textarea([
             'rows' => 10,
-            'cols' => 50,
-            'class' => 'form-control my-text-input heightunset',
+            'class' => 'form-control my-text-input',
             'placeholder' => 'Enter Address'
-        ]) ?>
-    </div>
+        ])
+        ->label(
+            null,
+            [
+                'class' => 'my-span-label'
+            ]
+        ) ?>
 
-    <div class="formFieldWrap">
-        <?= $form->field($model, 'skype')->textInput([
-            'autofocus' => true,
+    <?= $form->field(
+        $model,
+        'skype'
+    )->textInput(
+        [
             'class' => 'form-control my-text-input',
-            'placeholder' => 'Enter Skype id',
-        ]) ?>
-    </div>
+            'maxlength' => true,
+            'placeholder' => "Enter Skype ID"
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
 
-    <div class="formFieldWrap">
-        <?= $form->field($model, 'fb')->textInput([
-            'autofocus' => true,
+    <?= $form->field(
+        $model,
+        'fb'
+    )->textInput(
+        [
             'class' => 'form-control my-text-input',
-            'placeholder' => 'e.g https://m.me/pageid',
-        ]) ?>
-    </div>
+            'maxlength' => true,
+            'placeholder' => 'e.g https://m.me/pageid'
+        ]
+    )->label(
+        null, // null will give the label from the attributeLabels function
+        [
+            'class' => 'my-span-label'
+        ]
+    )
+    ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Submit', [
-            'class' => 'btn btn-lg btn-danger col-sm-12',
-            'name' => 'aboutme-button'
-        ]) ?>
+        <?= Html::submitButton(
+            'Update Details',
+            [
+                'class' => 'btn btn-lg btn-danger col-sm-12',
+                'style' => 'background:#9E1C3F;',
+                'name' => 'aboutme-button'
+            ]
+        ) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
-    </div>
 
 </div>

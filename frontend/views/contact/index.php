@@ -7,7 +7,6 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Contacts';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="contact-index">
 
@@ -30,13 +29,29 @@ $this->params['breadcrumbs'][] = $this->title;
             'address',
             //'skype',
             //'fb',
-            //'created_by',
-            //'created_at',
-            //'updated_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+            [
+                'label' => 'Created At',
+                'value' => function ($model) {
+                    $item_date = $model->created_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ],
+            [
+                'label' => 'Updated At',
+                'value' => function ($model) {
+                    $item_date = $model->updated_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ]
+        ]
     ]); ?>
-
 
 </div>

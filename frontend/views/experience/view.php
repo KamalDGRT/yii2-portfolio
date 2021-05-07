@@ -7,8 +7,6 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Experience */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Experiences', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="experience-view">
@@ -33,10 +31,29 @@ $this->params['breadcrumbs'][] = $this->title;
             'exp_name',
             'duration',
             'description:ntext',
-            'created_at',
-            'created_by',
-            'updated_at',
-        ],
+            [
+                'label' => 'Created At',
+                'value' => function ($model) {
+                    $item_date = $model->created_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ],
+            [
+                'label' => 'Updated At',
+                'value' => function ($model) {
+                    $item_date = $model->updated_at;
+                    $dt = new DateTime();
+                    $dt->setTimestamp($item_date);
+                    $dt->setTimezone(new DateTimeZone("Asia/Calcutta"));
+                    $would_be = $dt->format('g:ia T \o\n d-m-Y');
+                    return $would_be;
+                }
+            ]
+        ]
     ]) ?>
 
 </div>

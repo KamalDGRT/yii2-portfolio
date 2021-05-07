@@ -15,15 +15,6 @@ $this->title = 'Edit Experience';
         <?= $this->render('_form', [
             'model' => $model,
         ]) ?>
-        <?= Html::beginForm(['/experience/delete', 'id' => $model->id], 'post'); ?>
-        <?= Html::submitButton(
-            'Delete',
-            [
-                'class' => 'btn btn-lg btn-danger col-sm-12',
-            ],
-        )
-        ?>
-        <?= Html::endForm() ?>
 
     </div>
 </div>

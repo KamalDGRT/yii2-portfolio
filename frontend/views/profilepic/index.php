@@ -19,7 +19,7 @@ $this->title = 'Profile Picture';
         <div class="jagya20bottom"></div>
         <?php
         $profiles = new ActiveDataProvider([
-            'query' => Profilepic::find()->where(['created_by' => Yii::$app->user->identity->id]),
+            'query' => Profilepic::find()->where(['created_by' => Yii::$app->user->identity->id])
         ]);
         $profileCount = $profiles->getTotalCount();
         $hasProfilePic = $profileCount;
@@ -31,7 +31,7 @@ $this->title = 'Profile Picture';
             <?= Html::a(
                 'Upload a Profile Photo',
                 ['/profilepic/create/'],
-                ['class' => 'btn btn-lg btn-danger col-sm-12'],
+                ['class' => 'btn btn-lg btn-danger col-sm-12']
             )
             ?>
         <?php } else if ($hasProfilePic == 1) {  ?>
@@ -42,7 +42,7 @@ $this->title = 'Profile Picture';
             <?php
 
             echo Html::img($imageDetail->getImageUrl(), [
-                'style' => 'margin: auto;',
+                'style' => 'margin: auto;'
             ]);
 
 
@@ -52,8 +52,8 @@ $this->title = 'Profile Picture';
             <?= Html::submitButton(
                 'Remove Current Profile Photo & Add a New One',
                 [
-                    'class' => 'btn btn-lg btn-danger col-sm-12',
-                ],
+                    'class' => 'btn btn-lg btn-danger col-sm-12'
+                ]
             )
             ?>
             <?= Html::endForm() ?>

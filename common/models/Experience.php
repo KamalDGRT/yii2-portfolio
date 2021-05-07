@@ -58,7 +58,7 @@ class Experience extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'exp_name' => 'Exp Name',
+            'exp_name' => 'Experience Name',
             'duration' => 'Duration',
             'description' => 'Description',
             'created_at' => 'Created At',

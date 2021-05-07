@@ -2,6 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\models\Aboutme;
+use common\models\Company;
+use common\models\Contact;
+use common\models\Integration;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -110,6 +114,21 @@ class SiteController extends Controller
                 $theme = new Theme();
                 $theme->theme_chosen = 1;
                 $theme->save();
+
+                $aboutme = new Aboutme([
+                    'firstname' => Yii::$app->user->identity->username,
+                    'lastname' => Yii::$app->user->identity->username
+                ]);
+                $aboutme->save();
+
+                $company = new Company();
+                $company->save();
+
+                $contact = new Contact();
+                $contact->save();
+
+                $integration = new Integration();
+                $integration->save();
             }
             return $this->render('dashboard');
         }

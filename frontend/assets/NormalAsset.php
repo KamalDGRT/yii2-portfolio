@@ -20,6 +20,7 @@ class NormalAsset extends AssetBundle
     public $js = [
         "https://kit.fontawesome.com/d4585b8c01.js",
         "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js",
         "/public/normal/js/user.js",
         "/public/normal/js/form.js"
     ];

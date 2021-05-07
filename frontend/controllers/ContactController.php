@@ -28,10 +28,10 @@ class ContactController extends Controller
         return [
             [
                 'class' => AccessControl::class,
-                'only' => ['create', 'update', 'delete'],
+                'only' => ['create', 'update', 'delete', 'view'],
                 'rules' => [
                     [
-                        'actions' => ['create', 'update', 'delete'],
+                        'actions' => ['create', 'update', 'delete', 'view'],
                         'allow' => true,
                         'roles' => ['@']
                     ]
@@ -69,8 +69,13 @@ class ContactController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to access this page!!");
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model
         ]);
     }
 
@@ -107,6 +112,9 @@ class ContactController extends Controller
             throw new ForbiddenHttpException("You do not have permission to edit this profile.");
         }
 
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to access this page!!");
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['update', 'id' => $model->id]);
         }
@@ -125,8 +133,12 @@ class ContactController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
 
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to access this page!!");
+
+        $model->delete();
         return $this->redirect(['index']);
     }
 

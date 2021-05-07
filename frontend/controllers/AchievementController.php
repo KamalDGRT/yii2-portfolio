@@ -69,8 +69,12 @@ class AchievementController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to access this page!!");
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model
         ]);
     }
 
@@ -107,6 +111,9 @@ class AchievementController extends Controller
             throw new ForbiddenHttpException("You do not have permission to edit this article");
         }
 
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to access this page!!");
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         }
@@ -125,8 +132,12 @@ class AchievementController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
 
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to access this page!!");
+
+        $model->delete();
         return $this->redirect(['index']);
     }
 

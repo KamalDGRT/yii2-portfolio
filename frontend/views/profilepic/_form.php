@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 <?php
 if ($model->has_image) {
     echo Html::img($model->getImageUrl(), [
-        'class' => 'img-thumbnail',
+        'class' => 'img-thumbnail'
     ]);
 }
 
@@ -51,7 +51,7 @@ if (!$model->isNewRecord) { ?>
     <?= Html::submitButton(
         'Delete',
         [
-            'class' => 'btn btn-lg btn-danger col-sm-12',
+            'class' => 'btn btn-lg btn-danger col-sm-12'
         ],
     )
     ?>

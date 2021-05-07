@@ -10,61 +10,74 @@ $this->title = 'Experience';
 ?>
 <div class="content">
 
-    <h3 class="center-text">Experience</h3>
-
     <?php $k = 0;
     if ($k) { ?>
         <div class="alert alert-green bg-green-dark center-text ">
-            <i class="fa fa-check-square"></i> skill records has been created successfully.
+            <i class="fa fa-check-square"></i> Experience details has been created successfully.
         </div>
 
         <div class="alert alert-danger bg-red-light center-text ">
-            <i class="fa fa-check-square"></i> Skill record has been deleted successfully.
+            <i class="fa fa-check-square"></i> Experience details has been deleted successfully.
         </div>
     <?php } ?>
-    <p>
-        <?= Html::a(
-            'Add Experience',
-            ['experience/create'],
-            ['class' => 'btn btn-lg btn-block btn-success col-sm-4']
-        ) ?>
-    </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'tableOptions' => [
-            'id' => 'example',
-            'class' => 'table table-hover table-bordered',
-        ],
-        'columns' => [
-            [
-                'header' => '#',
-                'class' => 'yii\grid\SerialColumn'
-            ],
-            [
-                'attribute' => 'exp_name',
-                'header' => 'Name',
-                // 'headerOptions' => ['width' => '80'],
-            ],
-            [
-                'attribute' => 'duration',
-                'header' => 'Duration',
-                // 'headerOptions' => ['width' => '80'],
-            ],
-            [
-                'attribute' => 'description',
-                'header' => 'Description',
-                // 'headerOptions' => ['width' => '80'],
-            ],
-            [
-                'header' => 'Edit',
-                'content' => function ($model) {
-                    return $this->render('_edit', ['model' => $model]);
-                }
-            ],
-        ],
-    ]); ?>
+    <div class="container-fluid">
+        <div class="card shadow text-center">
+            <div class="card-header py-3">
+                <h3 class="text-primary m-0 font-weight-bold">Experience History</h3>
+            </div>
+            <div class="card-body">
 
+                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                    <?= GridView::widget([
+                        'dataProvider' => $dataProvider,
+                        'tableOptions' => [
+                            'id' => 'example',
+                            'class' => 'table my-0 black',
+                        ],
+                        'columns' => [
+                            [
+                                'header' => '#',
+                                'class' => 'yii\grid\SerialColumn'
+                            ],
+                            [
+                                'attribute' => 'exp_name',
+                                'header' => 'Name'
+                                // 'headerOptions' => ['width' => '80'],
+                            ],
+                            [
+                                'attribute' => 'duration',
+                                'header' => 'Duration'
+                                // 'headerOptions' => ['width' => '80'],
+                            ],
+                            [
+                                'attribute' => 'description',
+                                'header' => 'Description'
+                                // 'headerOptions' => ['width' => '80'],
+                            ],
+                            [
+                                'header' => 'Options',
+                                'content' => function ($model) {
+                                    return $this->render('_edit', ['model' => $model]);
+                                }
+                            ]
+                        ]
+                    ]); ?>
+                </div>
+
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+
+                <p class="card-text black">To add Experience History,</p>
+                <?= Html::a(
+                    'Click Here!',
+                    ['/experience/create'],
+                    [
+                        'class' => 'btn btn-primary'
+                    ]
+                )
+                ?>
+            </div>
+        </div>
     </div>
-
 </div>
