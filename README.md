@@ -1,4 +1,7 @@
 # Personal Portfolio 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![yii2-portfolio](https://socialify.git.ci/KamalDGRT/yii2-portfolio/image?description=1&descriptionEditable=Building%20an%20awesome%20Portfolio%20Website%20for%20all%20your%20needs%20!&font=KoHo&forks=1&issues=1&language=1&owner=1&pattern=Brick%20Wall&pulls=1&stargazers=1&theme=Dark)
 
