@@ -10,8 +10,6 @@ $this->title = 'Create Integration';
 ?>
 <div class="integration-create">
 
-    
-
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

@@ -107,9 +107,8 @@ class IntegrationController extends Controller
             throw new ForbiddenHttpException("You do not have permission to edit this article");
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['update', 'id' => $model->id]);
-        }
+        if ($model->created_by === NULL)
+            throw new ForbiddenHttpException("You are not allowed to view someone else's details!!");
 
         return $this->render('update', [
             'model' => $model,

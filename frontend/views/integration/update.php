@@ -9,8 +9,6 @@ $this->title = 'Integration';
 ?>
 <div class="experience-update">
 
-    <h3 class="center-text">Integration</h3>
-
     <div class="content">
         <?= $this->render('_form', [
             'model' => $model,
