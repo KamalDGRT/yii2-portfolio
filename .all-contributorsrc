@@ -16,6 +16,15 @@
         "maintenance",
         "mentoring"
       ]
+    },
+    {
+      "login": "JAYAROSHINI2112",
+      "name": "JAYA ROSHINI",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70878001?v=4",
+      "profile": "https://jayaroshini2112.github.io/portfolio/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
